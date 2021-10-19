@@ -1,0 +1,66 @@
+:root {
+  --accent-color-dark: #582525;
+  --accent-color-light: #ac8a8a;
+  --color-black: #333;
+  --color-white: #f7f5f7;
+  --base-unit: 1em;
+  --base-unit-half: 0.5em;
+  --base-unit-quarter: 0.25em;
+  --base-rounded-corners: 6px;
+  --base-unit-double: 2em;
+}
+
+body, html {
+  height:100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: var(--color-black);
+  background: var(--color-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ol {
+  margin: 0;
+}
+
+img,
+select,
+input[type=text],
+input[type=password],
+input[type=email] {
+  width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: var(--accent-color-dark);
+  color: #fff;
+  border-radius: var(--base-rounded-corners);
+  padding: 5px 10px;
+}
+
+/* Foundational Layout */
+
+nav {
+  margin-bottom: var(--base-unit);
+}
+
+nav li {
+  padding: 0;
+}
+
+.page {
+  padding: var(--base-unit);
+}
+
+.page-footer {
+  padding: var(--base-unit-double) 0;
+}

@@ -1,0 +1,29 @@
+.nav-pills {
+  background: var(--accent-color-light);
+  display: inline-block;
+  border-radius: var(--base-rounded-corners);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.nav-pills li {
+  display: inline-block;
+}
+
+.nav-pills a {
+  display: block;
+  padding: var(--base-unit-half) var(--base-unit);
+  text-decoration: none;
+  border-radius: var(--base-rounded-corners);
+  color: var(--accent-color-dark);
+}
+
+.nav-pills a.active {
+  background: var(--accent-color-dark);
+  color: var(--accent-color-light);
+}
+
+.nav-pills button[disabled=disabled] {
+  opacity: 0.2;
+}
