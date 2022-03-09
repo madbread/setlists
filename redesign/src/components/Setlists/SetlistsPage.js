@@ -44,6 +44,32 @@ const SetlistsPage = () => {
     });
   }
 
+  const handleReorderSetlist = (startIndex, endIndex) => {
+    const songlistSongsRef = api.getSonglistSongsRef(selectedListId);
+    get(songlistSongsRef).then(songs => {
+      const songsData = songs.val();
+      console.log('before: ', {...songsData});
+      for (const song in songsData) {
+        const oldPos = songsData[song];
+        if (oldPos === startIndex ) {
+          songsData[song] = endIndex;
+        } else if (oldPos < startIndex  && oldPos >= endIndex) {
+          songsData[song] = oldPos + 1;
+        } else if (oldPos > startIndex  && oldPos <= endIndex) {
+          songsData[song] = oldPos - 1;
+        }
+      }
+      console.log('after: ', {...songsData});
+      console.log(startIndex, endIndex);
+      set(songlistSongsRef, songsData);
+    });
+
+      // const result = Array.from(list);
+    // const [removed] = result.splice(startIndex, 1);
+    // result.splice(endIndex, 0, removed);
+  
+  };
+
   const handleAddSong = songId => {
     const songlistSongsRef = api.getSonglistSongsRef(selectedListId);
     get(songlistSongsRef).then(songs => {
@@ -126,6 +152,7 @@ const SetlistsPage = () => {
         setlist={setlistMap[selectedListId]}
         songsMap={songsMap}
         handleRemoveSong={handleRemoveSong}
+        handleReorderSetlist={handleReorderSetlist}
         showNate={showNate}
         showMike={showMike}
         showAdam={showAdam}
