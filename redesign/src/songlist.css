@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.list-selector label {
+  margin-right: var(--base-unit);
+  font-weight: bold;;
+}
+
 .list-selector > .select-container {
   flex: 1 0 auto;
   margin-right: var(--base-unit);
@@ -15,7 +20,7 @@
 
 .songlist-container {
   margin: var(--base-unit) 0;
-  padding: var(--base-unit-half);
+  padding: var(--base-unit-quarter);
   border-radius: var(--base-rounded-corners);
   border: 1px solid;
 } 
@@ -74,12 +79,22 @@ th, td  {
 
 .highlight-controls {
   display: flex;
+  align-items: center;
+  margin: var(--base-unit-half) 0;
 }
 
 .highlight-controls select {
   width:  100px;
 }
 
+.highlight-controls label.row {
+  margin-right: var(--base-unit);
+  font-weight: bold;
+}
+
+.highlight-controls input {
+  margin-right: var(--base-unit);
+}
 
 .color_Mandolin {
   background-color: #e4afba;
@@ -104,7 +119,7 @@ th, td  {
 }
 
 .highlight-legend {
-  margin: var(--base-unit-quarter) 0;
+  margin: var(--base-unit-quarter) var(--base-unit);
 }
 
 .highlight-legend span {

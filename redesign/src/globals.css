@@ -47,6 +47,10 @@ button {
   padding: 5px 10px;
 }
 
+button:disabled {
+  opacity: 0.2;
+}
+
 /* Foundational Layout */
 
 nav {
@@ -59,8 +63,11 @@ nav li {
 
 .page {
   padding: var(--base-unit);
+  margin: 0 var(--base-unit-double);
 }
 
 .page-footer {
   padding: var(--base-unit-double) 0;
 }
+
+h1, h2, h3, h4, h5, h6, p { margin-top: 0;}

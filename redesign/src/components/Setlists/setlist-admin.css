@@ -1,0 +1,13 @@
+.list-admin {
+  border: 2px dashed var(--accent-color-dark);
+  padding: var(--base-unit);
+  margin: var(--base-unit) 0;
+}
+
+hr {
+  margin: var(--base-unit-double) 0;
+}
+
+.list-admin button {
+  margin-right: var(--base-unit);
+}
