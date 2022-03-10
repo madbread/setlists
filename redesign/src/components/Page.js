@@ -2,6 +2,7 @@ import Nav from './Nav';
 import { Switch, Route } from "react-router-dom";
 import SetlistsPage from './Setlists/SetlistsPage';
 import SongsPage from './Songs/SongsPage';
+import PrintPage from './Print/PrintPage';
 import Footer from './Footer';
 
 const Page = () => {
@@ -14,6 +15,9 @@ const Page = () => {
         </Route>
         <Route path="/songs">
           <SongsPage/>
+        </Route>
+        <Route path="/print">
+          <PrintPage/>
         </Route>
         <Route path="/">
           <SetlistsPage/>
