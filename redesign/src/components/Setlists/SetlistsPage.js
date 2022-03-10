@@ -59,8 +59,6 @@ const SetlistsPage = () => {
           songsData[song] = oldPos - 1;
         }
       }
-      console.log('after: ', {...songsData});
-      console.log(startIndex, endIndex);
       set(songlistSongsRef, songsData);
     });
 
@@ -99,7 +97,10 @@ const SetlistsPage = () => {
   if (loadingSetlists || loadingSongs) return <p>Loading...</p>
 
   if (selectedListId === null) setSelectedListId(setlists[0].id);
-  const includedSongIds =  Object.keys(setlistMap[selectedListId || setlists[0].id].songs);
+
+  const setlistObj = setlistMap[selectedListId || setlists[0].id]
+  const songsObj = setlistObj?.songs || {};
+  const includedSongIds =  Object.keys(songsObj);
   const songsNotInList = songs.filter(s => !includedSongIds.includes(s.id));
 
   const inLegend = new Set();
