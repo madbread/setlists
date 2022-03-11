@@ -8,20 +8,3 @@
   display: inline-block;
 }
 
-.songlist-container select,
-.songlist-container input {
-  width: auto;
-}
-
-.songlist-container  .long-input {
-  width: 350px;
-}
-
-.basic-form button {
-  padding: var(--base-unit-half);
-  margin: var(--base-unit-half);
-  border: 2px solid var(--accent-color-dark);
-  background-color: var(--accent-color-dark);
-  border-radius: var(--base-rounded-corners);
-  color: var(--accent-color-light);
-}

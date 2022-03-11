@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import api from '../../api';
-import {onValue, get, set, push, remove, off} from 'firebase/database';
+import {onValue, get, set, push, remove} from 'firebase/database';
 import Setlist from './Setlist';
 import SetlistAdmin from './SetlistAdmin';
 import SelectSetlist from './SelectSetlist';
@@ -32,17 +32,15 @@ const SetlistsPage = () => {
         return item;
       });
     }
-
-    const songlistsRef = api.getSonglistsRef();
-    onValue(songlistsRef, snapshot => {
+    
+    const songlistsRef = onValue(api.getSonglistsRef(), snapshot => {
       setSetlistMap(snapshot.val());
       const lists = makeArrayFromDB(snapshot);
       setSetlists(lists);
       setLoadingSetlists(false);
     });
     
-    const songsRef = api.getSongsRef();
-    onValue(songsRef, snapshot => {
+    const songsRef = onValue(api.getSongsRef(), snapshot => {
       setSongsMap(snapshot.val());
       const songsArr = makeArrayFromDB(snapshot);
       setSongs(songsArr);
@@ -50,8 +48,8 @@ const SetlistsPage = () => {
     });
 
     return () => {
-      off(songlistsRef);
-      off(songsRef);
+      songlistsRef();
+      songsRef();
     }
   }, []);
 

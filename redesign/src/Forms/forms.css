@@ -6,13 +6,21 @@
   background-color: var(--accent-color-light);
   border-radius: var(--base-rounded-corners);
 }
+.basic-form button {
+  padding: var(--base-unit-half);
+  margin: var(--base-unit-half);
+  border: 2px solid var(--accent-color-dark);
+  background-color: var(--accent-color-dark);
+  border-radius: var(--base-rounded-corners);
+  color: var(--accent-color-light);
+}
 .field-pair {
   display: flex;
   align-items: baseline;
   margin-bottom: var(--base-unit-half);
 }
 .field-pair label {
-  flex: 0 1 75px;
+  flex: 0 0 40px;
   margin-right: var(--base-unit);
   text-align: right;
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, showCarl, setShowNate, setShowMike, setShowAdam, setShowCarl, setHighlight}) => (
   <>
     <div className="highlight-controls">
-      <label className="row" htmlFor="highlight">Show Instrument</label>
+      <label className="row" htmlFor="highlight">Show</label>
       <label htmlFor="cb_nate">Nate</label>
       <input id="cb_nate" type="checkbox" checked={showNate} onChange={e => setShowNate(e.target.checked)}/>
       <label htmlFor="cb_mike">Mike</label>

@@ -14,7 +14,7 @@ body, html {
   height:100%;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-black);
   background: var(--color-white);
   font-family: Arial, Helvetica, sans-serif;
@@ -31,12 +31,11 @@ ol {
 }
 
 img,
-select,
-input[type=text],
-input[type=password],
-input[type=email] {
+select {
   width: 100%;
 }
+
+/* buttons */
 
 .btn,
 button {
@@ -56,6 +55,7 @@ button.active {
   color: #dfdfdf;
 }
 
+.btn:disabled ,
 button:disabled {
   opacity: 0.2;
 }
@@ -66,17 +66,27 @@ nav {
   margin-bottom: var(--base-unit);
 }
 
-nav li {
-  padding: 0;
-}
-
 .page {
-  padding: var(--base-unit);
-  margin: 0 var(--base-unit-double);
-}
-
-.page-footer {
-  padding: var(--base-unit-double) 0;
+  margin: 0 var(--base-unit);
 }
 
 h1, h2, h3, h4, h5, h6, p { margin-top: 0;}
+
+/* classes */
+
+.full-width {
+  width: 100%;
+}
+
+button.delete {
+  background: red;
+  color: #fff;
+}
+
+.hidden {
+  transform: scale(0);
+}
+
+hr {
+  margin: var(--base-unit) 0;
+}

@@ -25,6 +25,10 @@
   border: 1px solid;
 } 
 
+.songlist-container.edit-mode {
+  margin: var(--base-unit);
+}
+
 .songlist {
   width: 100%;
   text-align: left;
@@ -59,24 +63,6 @@ th, td  {
   font-size: 0.85rem;
 }
 
-.add-song {
-  margin: var(--base-unit) 0;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--base-unit);
-}
-.controls > .input-container {
-  margin-left: var(--base-unit);
-}
-
-.filter-container {
-  display: flex;
-  margin-bottom: var(--base-unit);
-}
-
 .highlight-controls {
   display: flex;
   align-items: center;
@@ -84,7 +70,7 @@ th, td  {
 }
 
 .highlight-controls select {
-  width:  100px;
+  width: auto;
 }
 
 .highlight-controls label.row {

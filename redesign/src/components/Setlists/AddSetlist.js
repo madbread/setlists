@@ -12,10 +12,8 @@ const AddSetlist = ({handleAddSetlist}) => {
 
   return  (
     <div className="add-setlist">
-      <div className="controls">
-        <button disabled={!listTitle.length} onClick={clearTitleAndSubmit}>Add Setlist</button>
-        <input onChange={e => setlistTitle(e.target.value)} name="title" value={listTitle} />
-      </div>
+      <input onChange={e => setlistTitle(e.target.value)} name="title" value={listTitle} />
+      <button disabled={!listTitle.length} onClick={clearTitleAndSubmit}>+ Add New Setlist</button>
     </div>
   )
 }

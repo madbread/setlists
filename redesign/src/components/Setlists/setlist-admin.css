@@ -4,10 +4,11 @@
   margin: var(--base-unit) 0;
 }
 
-hr {
-  margin: var(--base-unit-double) 0;
+.list-admin input {
+  margin-right: var(--base-unit);
 }
 
-.list-admin button {
-  margin-right: var(--base-unit);
+.add-song input,
+.add-song select {
+  margin-bottom: var(--base-unit);
 }

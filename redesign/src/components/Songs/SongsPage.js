@@ -75,7 +75,7 @@ const SongsPage = () => {
     <div className="page-songs">
       <div className="songlist-container">
         <div className="top-filter">
-          <label htmlFor="song-filter">Filter Song Options</label>
+          <label htmlFor="song-filter">Filter Songs</label>
           <input onChange={handleSetFilter} value={filter} />
         </div>
         <div className="top-filter">

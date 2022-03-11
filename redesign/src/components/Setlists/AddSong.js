@@ -3,7 +3,6 @@ import {useState} from 'react';
 import FilterSongOptions from './FilterSongOptions';
 
 const AddSong = ({songs,  handleAddSong}) => {
-  const [showAddSong, setShowAddSong] = useState(false);
   const [filter, setFilter] = useState('');
 
   const [availableSongs,  setAvailableSongs] = useState([...songs]);
@@ -31,23 +30,13 @@ const AddSong = ({songs,  handleAddSong}) => {
     }
   }
 
-  const SelectSong = () => showAddSong
-    ? (<div className="input-container">
-        <select value={selectedSong} onChange={e => setSelectedSong(e.target.value)} >
-          {filteredSongs.map(song => <option value={song.id} key={song.id}>{song.title}</option>)}
-        </select>
-       </div>
-      )
-    : null;
-
   return  (
     <div className="add-song">
-      <div className="controls">
-        <button onClick={() => setShowAddSong(!showAddSong)}>{showAddSong ? 'Cancel' : 'Add Songs'}</button>
-        <SelectSong/>
-      </div>
-      {showAddSong && <FilterSongOptions filter={filter} setFilter={handleSetFilter}/>}
-      {showAddSong && <button type="button" onClick={handleSaveSong}>save to list</button>}
+      <FilterSongOptions filter={filter} setFilter={handleSetFilter}/>
+      <select value={selectedSong} onChange={e => setSelectedSong(e.target.value)} >
+        {filteredSongs.map(song => <option value={song.id} key={song.id}>{song.title}</option>)}
+      </select>
+      <button type="button" onClick={handleSaveSong}>+ Add Song</button>
     </div>
   )
 }

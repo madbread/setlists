@@ -1,6 +1,33 @@
 import PropTypes from 'prop-types';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+const abbr = title => {
+  let newTitle;
+  switch (title) {
+    case 'Mandolin':
+      newTitle = 'Mand';
+      break;
+    case 'Harmonica':
+      newTitle = 'Harp';
+      break;
+    case 'Guitar':
+      newTitle = 'Acou';
+      break;
+    case 'Fiddle':
+      newTitle = 'Fidd';
+      break;
+    case 'Lap Steel':
+      newTitle = 'Lap';
+      break;
+    case 'Electric':
+      newTitle = 'Elec';
+      break;
+    default:
+      newTitle = title;
+  }
+  return newTitle
+}
+
 const Setlist = ({
   editMode,
   setlist,
@@ -28,10 +55,10 @@ const Setlist = ({
             className={`color_${songsMap[songId][highlight] || ''}`}
           >
             <td className="song-title">{idx + 1}) {songsMap[songId].title}</td>
-            {showNate && <td className="name-col">{songsMap[songId].nate}</td>}
-            {showMike && <td className="name-col">{songsMap[songId].mike}</td>}
-            {showAdam && <td className="name-col">{songsMap[songId].adam}</td>}
-            {showCarl && <td className="name-col">{songsMap[songId].carl}</td>}
+            {showNate && <td className="name-col">{abbr(songsMap[songId].nate)}</td>}
+            {showMike && <td className="name-col">{abbr(songsMap[songId].mike)}</td>}
+            {showAdam && <td className="name-col">{abbr(songsMap[songId].adam)}</td>}
+            {showCarl && <td className="name-col">{abbr(songsMap[songId].carl)}</td>}
             <td className="short-col song-key">{songsMap[songId].key}</td>
             {editMode && <td className="short-col"><button className="remove-button" type="button" onClick={() => handleRemoveSong(songId)}>X</button></td>}
           </tr>
@@ -46,7 +73,7 @@ const Setlist = ({
   }
 
   return  (
-    <div className="songlist-container">
+    <div className={editMode ? 'edit-mode songlist-container' : 'songlist-container'}>
       {setlist && 
         <DragDropContext onDragEnd={onDragEnd}>
           <Droppable droppableId="droppable">

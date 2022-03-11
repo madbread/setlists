@@ -15,13 +15,13 @@ const SetlistAdmin = ({handleAddSong, handleAddSetlist, handleDeleteList, songsN
 
   return  (
     <div className="list-admin">
-      <h3>Edit Setlists</h3>
       <AddSong handleAddSong={handleAddSong} songs={songsNotInList} />
       <hr />
       <AddSetlist handleAddSetlist={handleAddSetlist} />
       <hr />
-      <button disabled={!enableDeleteList} onClick={resetEnableDelete}>Delete This Setlist</button> <label htmlFor="enableDel">Enable Delete</label>
-      <input id="enableDel" name="enableDel" onChange={() => setEnableDeleteList(enabled => !enabled)} type="checkbox" checked={enableDeleteList} />
+      <label htmlFor="enableDel">Enable Delete</label>
+      <input className="hidden" id="enableDel" name="enableDel" onChange={() => setEnableDeleteList(enabled => !enabled)} type="checkbox" checked={enableDeleteList} />
+      <button disabled={!enableDeleteList} onClick={resetEnableDelete}>Delete This Setlist</button>
     </div>
   )
 }
