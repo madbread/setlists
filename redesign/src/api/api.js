@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import {getDatabase, ref} from 'firebase/database'
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, createUserWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCQeCmX7ouzkQGwXDWqGHaKwXHZg6yZjgQ",
@@ -29,31 +29,45 @@ const methods = {
   
   login: (email, pass) => {
     const auth = getAuth();
-      signInWithEmailAndPassword(auth, email, pass)
-        .then((response) => {
-          console.log('response: ', response)
-          console.log('...you are signed in!')
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorCode, errorMessage)
-        });
+    return signInWithEmailAndPassword(auth, email, pass)
+      .then((response) => {
+        console.log('response: ', response)
+        console.log('...you are signed in!')
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+      });
   },
 
   logout: () => {
     const auth = getAuth();
-    signOut(auth)
+    return signOut(auth)
       .then(() => console.log('You have signed out'))
       .catch(error => console.log('Error signing out: ', error))
   },
 
+  registerUser: (email, pass) => {
+    const auth = getAuth();
+    return createUserWithEmailAndPassword(auth, email, pass)
+      .then(user => alert('created new user ', email))
+      .catch(error => console.errorr('Error registering user: ', error))
+  },
+
+  updatePassword: email => {
+    const auth = getAuth();
+    return sendPasswordResetEmail(auth, email)
+      .then(user => alert('Password Update Email Sent to ', email))
+      .catch(error => console.error('Error updating password: ', error))
+  },
+
   getLoginObserver: callback => {
     const auth = getAuth();
-      onAuthStateChanged(auth, user => {
-        user = user ? user : {}
-        callback(user)
-      })
+    return onAuthStateChanged(auth, user => {
+      user = user ? user : {}
+      callback(user)
+    })
   }
 };
 

@@ -1,10 +1,12 @@
 
 .basic-form {
   padding: var(--base-unit);
-  margin: var(--base-unit);
   border: 2px solid var(--accent-color-dark);
   background-color: var(--accent-color-light);
   border-radius: var(--base-rounded-corners);
+}
+.basic-form.hidden {
+  display: none;
 }
 .basic-form button {
   padding: var(--base-unit-half);
@@ -20,7 +22,14 @@
   margin-bottom: var(--base-unit-half);
 }
 .field-pair label {
-  flex: 0 0 40px;
+  flex: 0 0 55px;
   margin-right: var(--base-unit);
   text-align: right;
+}
+.form-page-container {
+  margin: var(--base-unit);
+}
+
+.form-page-container > * {
+  margin-bottom: var(--base-unit);
 }

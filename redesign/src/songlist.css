@@ -20,7 +20,7 @@
 
 .songlist-container {
   margin: var(--base-unit) 0;
-  padding: var(--base-unit-quarter);
+  padding: var(--base-unit);
   border-radius: var(--base-rounded-corners);
   border: 1px solid;
 } 

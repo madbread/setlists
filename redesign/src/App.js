@@ -1,6 +1,8 @@
 import {useFetchAuth} from './useFetchAuth';
 import LoginForm from './Forms/LoginForm';
 import Page from './components/Page';
+import RegisterUserForm from './Forms/RegisterUserForm';
+import ForgotPasswordForm from './Forms/ForgotPasswordForm';
 
 import './globals.css'
 import './songlist.css'
@@ -11,7 +13,11 @@ const App = () => {
 
   return user.logged_in
     ? <Page/>
-    : <LoginForm/>
+    : <>
+        <LoginForm/>
+        <RegisterUserForm />
+        <ForgotPasswordForm />
+      </>
 }
 
 export default App;

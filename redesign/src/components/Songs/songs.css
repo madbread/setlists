@@ -1,5 +1,5 @@
 .top-filter {
-  margin: var(--base-unit);
+  margin-bottom: var(--base-unit);
 }
 
 .top-filter label {
