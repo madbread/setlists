@@ -86,6 +86,15 @@ const SetlistsPage = () => {
     });
   };
 
+  const handleRenameSetlist = title => {
+    const songlistRef = api.getSonglistRef(selectedListId);
+    get(songlistRef).then(list => {
+      const listData = list.val() || {};
+      listData.title = title;
+      set(songlistRef, listData);
+    });
+  };
+
   const handleAddSetlist = title => {
     const songlistsRef = api.getSonglistsRef();
     const newListRef = push(songlistsRef);
@@ -153,6 +162,8 @@ const SetlistsPage = () => {
       
       {editMode &&
         <SetlistAdmin
+          title={setlistMap[selectedListId].title}
+          handleRenameSetlist={handleRenameSetlist}
           handleAddSong={handleAddSong}
           handleAddSetlist={handleAddSetlist}
           handleDeleteList={handleDeleteList}
