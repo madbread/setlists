@@ -51,14 +51,14 @@ const methods = {
   registerUser: (email, pass) => {
     const auth = getAuth();
     return createUserWithEmailAndPassword(auth, email, pass)
-      .then(user => alert('created new user ', email))
+      .then(() => alert(`Created new user ${email}, logging in now.`))
       .catch(error => console.errorr('Error registering user: ', error))
   },
 
   updatePassword: email => {
     const auth = getAuth();
     return sendPasswordResetEmail(auth, email)
-      .then(user => alert('Password Update Email Sent to ', email))
+      .then(() => alert(`Password Update Email Sent to ${email}`))
       .catch(error => console.error('Error updating password: ', error))
   },
 

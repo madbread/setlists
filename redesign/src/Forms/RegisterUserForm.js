@@ -3,9 +3,7 @@ import api from '../api';
 import {useFormData} from './useFormData';
 import './forms.css';
 
-const handleLogin = data => api.registerUser(data.email, data.pass).then(() => {
-  alert('Successfully Registered ', data.email);
-});
+const handleLogin = data => api.registerUser(data.email, data.pass);
 
 const RegisterUserForm = () => {
   const [showRegisterForm, setShowRegisterForm] = useState(false);
