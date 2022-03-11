@@ -1,5 +1,5 @@
 import Nav from './Nav';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from 'react-router-dom';
 import SetlistsPage from './Setlists/SetlistsPage';
 import SongsPage from './Songs/SongsPage';
 import PrintPage from './Print/PrintPage';
@@ -16,7 +16,7 @@ const Page = () => {
         <Route path="/songs">
           <SongsPage/>
         </Route>
-        <Route path="/print">
+        <Route path="/print/:id">
           <PrintPage/>
         </Route>
         <Route path="/">

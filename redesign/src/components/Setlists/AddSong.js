@@ -43,7 +43,7 @@ const AddSong = ({songs,  handleAddSong}) => {
   return  (
     <div className="add-song">
       <div className="controls">
-        <button onClick={() => setShowAddSong(!showAddSong)}>{showAddSong ? 'cancel' : 'add song'}</button>
+        <button onClick={() => setShowAddSong(!showAddSong)}>{showAddSong ? 'Cancel' : 'Add Songs'}</button>
         <SelectSong/>
       </div>
       {showAddSong && <FilterSongOptions filter={filter} setFilter={handleSetFilter}/>}

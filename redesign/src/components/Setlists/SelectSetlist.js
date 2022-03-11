@@ -9,11 +9,11 @@ const SelectSetlist = ({setSelectedListId, setEditMode, editMode, selectedListId
         {setlists.map(list => <option value={list.id} key={list.id}>{list.title}</option>)}
       </select>
     </div>
-    <button type="button" onClick={() => setEditMode(!editMode)}>
-      {editMode ? 'Edit Mode' : 'Read Only'}
+    <button className={editMode ? 'active' : ''} type="button" onClick={() => setEditMode(!editMode)}>
+      {editMode ? 'Lock' : 'Edit'}
     </button>
   </div>
-);
+);  
 
 SelectSetlist.propTypes = {
   setSelectedListId: PropTypes.func,

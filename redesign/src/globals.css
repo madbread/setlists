@@ -38,13 +38,22 @@ input[type=email] {
   width: 100%;
 }
 
+.btn,
 button {
   border: none;
   cursor: pointer;
-  background: var(--accent-color-dark);
-  color: #fff;
+  background: var(--accent-color-light);
+  color: var(--accent-color-dark);
   border-radius: var(--base-rounded-corners);
   padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn,
+button.active {
+  background: var(--accent-color-dark);
+  color: #dfdfdf;
 }
 
 button:disabled {

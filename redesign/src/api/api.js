@@ -17,12 +17,12 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const songlistRef = ref(db, 'data/songLists');
 const songsRef = ref(db, 'data/songs');
-const instrumentsRef = ref(db, 'meta/instruments');
 
 const methods = {
   getSonglistsRef: () => songlistRef,
   getSongsRef: () => songsRef,
-  getInstrumentsRef: () => instrumentsRef,
+
+  getSongRef: id => ref(db, `data/songs/${id}`),
 
   getSonglistRef: id => ref(db, `data/songLists/${id}`),
   getSonglistSongsRef: id => ref(db, `data/songLists/${id}/songs`),

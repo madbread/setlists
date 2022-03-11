@@ -31,6 +31,6 @@ export const useFormData = (onSubmit = noop, init = {}) => {
     handleSubmit,
     handleInputChange,
     handleReset,
-    handleSetFormData    
+    handleSetFormData
   }
 }

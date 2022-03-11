@@ -1,7 +1,7 @@
 
 .basic-form {
-  padding: var(--base-unit-half);
-  margin: var(--base-unit-half);
+  padding: var(--base-unit);
+  margin: var(--base-unit);
   border: 2px solid var(--accent-color-dark);
   background-color: var(--accent-color-light);
   border-radius: var(--base-rounded-corners);
@@ -9,10 +9,10 @@
 .field-pair {
   display: flex;
   align-items: baseline;
-  margin-bottom: var(--base-unit-quarter);
+  margin-bottom: var(--base-unit-half);
 }
 .field-pair label {
   flex: 0 1 75px;
-  margin-right: var(--base-unit-half);
+  margin-right: var(--base-unit);
   text-align: right;
 }

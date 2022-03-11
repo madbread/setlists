@@ -1,10 +1,10 @@
 import {useState, useEffect} from 'react';
 import api from '../../api';
 import {onValue, off} from 'firebase/database';
+import { useParams } from "react-router-dom";
+
 
 import './print.css';
-
-const selectedListId = '-Mxp6uXqn5cghm8N4M9i';
 
 const print = () => window.print();
 
@@ -24,13 +24,18 @@ const PrintPage = () => {
   const [loadingSetlist, setLoadingSetlist] = useState(true);
   const [setlist, setSetlist] = useState([]);
 
+  const { id } = useParams();
+
   useEffect(() => {
     const makeSongsArray = ({songs}) => Object.keys(songs);
 
-    const songlistRef = api.getSonglistRef(selectedListId);
+    const songlistRef = api.getSonglistRef(id);
     onValue(songlistRef, snapshot => {
-      setSetlist(makeSongsArray(snapshot.val()));
-      setTitle(snapshot.val().title);
+      const setlistDB = snapshot.val();
+      if (setlistDB) {
+        setSetlist(makeSongsArray(setlistDB));
+        setTitle(snapshot.val().title);
+      }
       setLoadingSetlist(false);
     });
 
@@ -43,7 +48,7 @@ const PrintPage = () => {
     return () => {
       off(songlistRef);
     }
-  }, []);
+  }, [id]);
 
   if (loadingSetlist || loadingSongs) return <p>Loading...</p>
 

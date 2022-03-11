@@ -5,6 +5,7 @@ import Setlist from './Setlist';
 import SetlistAdmin from './SetlistAdmin';
 import SelectSetlist from './SelectSetlist';
 import HighlightControls from './HighlightControls';
+import { Link } from 'react-router-dom';
 
 const SetlistsPage = () => {
   const [editMode, setEditMode] = useState(false);
@@ -172,6 +173,7 @@ const SetlistsPage = () => {
         showCarl={showCarl}
         highlight={highlight}
       />
+      <Link className="btn float-right" to={`/print/${selectedListId}`} target="_blank">Print List</Link>
     </div>
   )
 }
