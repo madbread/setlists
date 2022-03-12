@@ -20,16 +20,24 @@ const abbr = title => {
   return newTitle
 }
 
-const handleAddSetlist = data => {
+const handleAddSong = data => {
   const songsRef = api.getSongsRef();
   const newSongsRef = push(songsRef);
   set(newSongsRef, data);
 };
 
+const handleUpdateSong = data => {
+  const songRef = api.getSongRef(data.id);
+  get(songRef).then(song => {
+    set(songRef, {...song.val(), ...data});
+  });
+};
+
 const EditSongForm = ({song, handleCancel}) => {
 
   const handleSave = data => {
-    if (!data.id) handleAddSetlist(data);
+    if (!data.id) handleAddSong(data);
+    if (data.id) handleUpdateSong(data);
     handleCancel();
   };
 
