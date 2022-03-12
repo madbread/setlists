@@ -12,8 +12,13 @@ const AddSetlist = ({handleAddSetlist}) => {
 
   return  (
     <div className="add-setlist">
-      <input onChange={e => setlistTitle(e.target.value)} name="title" value={listTitle} />
-      <button disabled={!listTitle.length} onClick={clearTitleAndSubmit}>+ Add New Setlist</button>
+      <div className="field-pair">
+        <label htmlFor="add_list">New Setlist</label>
+        <input id="add_list" onChange={e => setlistTitle(e.target.value)} name="title" value={listTitle} />
+      </div>
+      <div className="align-right">
+        <button disabled={!listTitle.length} onClick={clearTitleAndSubmit}>+ Add New Setlist</button>
+      </div>
     </div>
   )
 }

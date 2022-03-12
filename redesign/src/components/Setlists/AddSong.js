@@ -31,12 +31,21 @@ const AddSong = ({songs,  handleAddSong}) => {
   }
 
   return  (
-    <div className="add-song">
-      <FilterSongOptions filter={filter} setFilter={handleSetFilter}/>
-      <select value={selectedSong} onChange={e => setSelectedSong(e.target.value)} >
-        {filteredSongs.map(song => <option value={song.id} key={song.id}>{song.title}</option>)}
-      </select>
-      <button type="button" onClick={handleSaveSong}>+ Add Song</button>
+    <div>
+      <h3>Add Song</h3>
+      <div className="field-pair">
+        <label htmlFor="filter_songs">Filter Songs</label>
+        <FilterSongOptions filter={filter} setFilter={handleSetFilter}/>
+      </div>
+      <div className="field-pair">
+        <label htmlFor="song_select">Song</label>
+        <select id="song_select" value={selectedSong} onChange={e => setSelectedSong(e.target.value)} >
+          {filteredSongs.map(song => <option value={song.id} key={song.id}>{song.title}</option>)}
+        </select>
+      </div>
+      <div className="align-right">
+        <button type="button" onClick={handleSaveSong}>+ Add</button>
+      </div>
     </div>
   )
 }

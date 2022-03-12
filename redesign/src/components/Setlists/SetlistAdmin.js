@@ -20,13 +20,23 @@ const SetlistAdmin = ({handleAddSong, handleAddSetlist, handleDeleteList, handle
     <div className="list-admin">
       <AddSong handleAddSong={handleAddSong} songs={songsNotInList} />
       <hr />
-      <input name="title" value={newTitle} onChange={e => setTitle(e.target.value)} />
-      <button disabled={newTitle === title || newTitle === ''} onClick={() => handleRenameSetlist(newTitle)}>Rename This Setlist</button>
+      <h3>Rename This List</h3>
+      <div className="field-pair">
+        <label htmlFor="new_list_title">Name</label>
+        <input id="new_list_title" name="title" value={newTitle} onChange={e => setTitle(e.target.value)} />
+      </div>
+      <div className="align-right">
+        <button disabled={newTitle === title || newTitle === ''} onClick={() => handleRenameSetlist(newTitle)}>Update Name</button>
+      </div>
       <hr />
-      <label htmlFor="enableDel">Enable Delete</label>
-      <input className="hidden" id="enableDel" name="enableDel" onChange={() => setEnableDeleteList(enabled => !enabled)} type="checkbox" checked={enableDeleteList} />
-      <button className={enableDeleteList ? 'delete' : 'hidden'} disabled={!enableDeleteList} onClick={resetEnableDelete}>Delete This Setlist</button>
+      <div className="field-pair">
+        <label htmlFor="enableDel">Delete</label>
+        <button className={enableDeleteList ? 'delete' : 'hidden'} disabled={!enableDeleteList} onClick={resetEnableDelete}>Delete This Setlist</button>
+        <input className="hidden" id="enableDel" name="enableDel" onChange={() => setEnableDeleteList(enabled => !enabled)} type="checkbox" checked={enableDeleteList} />
+      </div>
+        
       <hr />
+      <h3>Add New Setlist</h3>
       <AddSetlist handleAddSetlist={handleAddSetlist} />
     </div>
   )

@@ -51,11 +51,6 @@
   text-decoration: none;
 }
 
-.bold { font-weight: bold; }
-.text-small { font-size: 10px; }
-.float-right { float: right; }
-.hand {cursor: pointer; }
-
 tbody.zebra tr:nth-child(even) {
   background-color: #f0eeee;;
 }

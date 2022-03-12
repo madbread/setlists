@@ -2,9 +2,8 @@ import {useState, useEffect} from 'react';
 import api from '../../api';
 import {onValue, off} from 'firebase/database';
 import EditSongForm from './EditSongForm';
+import ViewSongs from './ViewSongs';
 import {getNewSong} from './songData';
-
-import './songs.css';
 
 const SongsPage = () => {
   const [songs, setSongs] = useState([]);
@@ -74,20 +73,22 @@ const SongsPage = () => {
   return  (
     <div className="page-songs">
       <div className="songlist-container">
-        <div className="top-filter">
-          <label htmlFor="song-filter">Filter Songs</label>
-          <input onChange={handleSetFilter} value={filter} />
-        </div>
-        <div className="top-filter">
-          <label htmlFor="song-select">Edit Existing Song</label>
+          <h2>Edit Songs</h2>
+          <div className="field-pair">
+            <label htmlFor="song-filter">Filter Songs</label>
+            <input onChange={handleSetFilter} value={filter} />
+          </div>
+        <div className="field-pair">
+          <label htmlFor="song-select">Edit Song</label>
           <select id="song-select" value={selectedSong} onChange={e => setSelectedSong(e.target.value)} >
             {options()}
           </select>
         </div>
-        <div className="top-filter">
-          <button onClick={handleAddSong} type="button">+ New Song</button>
-        </div>
+        <button onClick={handleAddSong} type="button">+ New Song</button>
         {selectedSongData && <EditSongForm song={selectedSongData} handleCancel={handleCancel} />}
+      </div>
+      <div className="songlist-container">
+        <ViewSongs songs={songs} />
       </div>
     </div>
   )

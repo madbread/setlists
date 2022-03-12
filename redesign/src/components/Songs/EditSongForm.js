@@ -60,78 +60,81 @@ const EditSongForm = ({song, handleCancel}) => {
   }, [song, handleSetFormData, formData]);
 
   return (
-    <form className="basic-form" onSubmit={handleSubmit}>
-      <div className="field-pair">
-        <label htmlFor="title">Title</label>
-        <input
-          name="title"
-          value={formData.title || ''}
-          onChange={handleInputChange}
-          className="full-width"
-        />
-      </div>
-      <div className="field-pair">
-        <label htmlFor="key">Key</label>
-        <select name="key" value={formData.key || 'A'} onChange={handleInputChange}>
-          {keyOptions.map(o => <option key={o} value={o}>{o}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="singer">Singer</label>
-        <select name="singer" value={formData.singer || 'Carl'} onChange={handleInputChange}>
-          {singerOptions.map(o => <option key={o} value={o}>{o}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="adam">Adam</label>
-        <select name="adam" value={formData.adam || 'Banjo'} onChange={handleInputChange}>
-          {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="carl">Carl</label>
-        <select name="carl" value={formData.carl || 'Guitar'} onChange={handleInputChange}>
-          {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="mike">Mike</label>
-        <select name="mike" value={formData.mike || 'Bass'} onChange={handleInputChange}>
-          {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="nate">Nate</label>
-        <select name="nate" value={formData.nate || ''} onChange={handleInputChange}>
-          {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
-        </select>
-      </div>
+    <>
+      <hr />
+      <form className="basic-form" onSubmit={handleSubmit}>
+        <div className="field-pair">
+          <label htmlFor="title">Title</label>
+          <input
+            name="title"
+            value={formData.title || ''}
+            onChange={handleInputChange}
+            className="full-width"
+          />
+        </div>
+        <div className="field-pair">
+          <label htmlFor="key">Key</label>
+          <select name="key" value={formData.key || 'A'} onChange={handleInputChange}>
+            {keyOptions.map(o => <option key={o} value={o}>{o}</option>)}
+          </select>
+        </div>
+        <div className="field-pair">
+          <label htmlFor="singer">Singer</label>
+          <select name="singer" value={formData.singer || 'Carl'} onChange={handleInputChange}>
+            {singerOptions.map(o => <option key={o} value={o}>{o}</option>)}
+          </select>
+        </div>
+        <div className="field-pair">
+          <label htmlFor="adam">Adam</label>
+          <select name="adam" value={formData.adam || 'Banjo'} onChange={handleInputChange}>
+            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+          </select>
+        </div>
+        <div className="field-pair">
+          <label htmlFor="carl">Carl</label>
+          <select name="carl" value={formData.carl || 'Guitar'} onChange={handleInputChange}>
+            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+          </select>
+        </div>
+        <div className="field-pair">
+          <label htmlFor="mike">Mike</label>
+          <select name="mike" value={formData.mike || 'Bass'} onChange={handleInputChange}>
+            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+          </select>
+        </div>
+        <div className="field-pair">
+          <label htmlFor="nate">Nate</label>
+          <select name="nate" value={formData.nate || ''} onChange={handleInputChange}>
+            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+          </select>
+        </div>
 
-      <div className="field-pair">
-        <label htmlFor="bpm">bpm</label>
-        <input className="full-width" name="bpm" type="number" value={formData.bpm || ''} onChange={handleInputChange} />
-      </div>
+        <div className="field-pair">
+          <label htmlFor="bpm">bpm</label>
+          <input className="full-width" name="bpm" type="number" value={formData.bpm || ''} onChange={handleInputChange} />
+        </div>
 
-      <div className="field-pair">
-        <label></label>
-        <button type="submit">save</button>
-        <button className="cancel" type="button" onClick={handleCancel}>cancel</button>
-      </div>
+        <div className="field-pair">
+          <label></label>
+          <button type="submit">save</button>
+          <button className="cancel" type="button" onClick={handleCancel}>cancel</button>
+        </div>
 
-      {song.id && 
-        <>
-          <div className="field-pair">
-            <label htmlFor="enable_delete">Delete</label>
-            {enableDelete &&
-            <button className={enableDelete ? 'delete full-width' : ' delete hidden full-width'} type="button" onClick={() => handleDelete(song.id)}>
-              x delete song
-            </button>
-            }
-          </div>
-          <input className="hidden" id="enable_delete" type="checkbox" value={enableDelete} onChange={() => setEnableDelete(enabled => !enabled)} />
-        </>
-      }
-    </form>
+        {song.id && 
+          <>
+            <div className="field-pair">
+              <label htmlFor="enable_delete">Delete</label>
+              {enableDelete &&
+              <button className={enableDelete ? 'delete full-width' : ' delete hidden full-width'} type="button" onClick={() => handleDelete(song.id)}>
+                x delete song
+              </button>
+              }
+            </div>
+            <input className="hidden" id="enable_delete" type="checkbox" value={enableDelete} onChange={() => setEnableDelete(enabled => !enabled)} />
+          </>
+        }
+      </form>
+    </>
   )
 }
 

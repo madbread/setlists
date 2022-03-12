@@ -8,7 +8,10 @@
   margin-right: var(--base-unit);
 }
 
-.add-song input,
-.add-song select {
-  margin-bottom: var(--base-unit);
+.list-admin input,
+.list-admin select {
+  margin-bottom: var(--base-unit-quarter);
 }
+ .list-admin h3 {
+   margin-bottom: var(--base-unit-quarter);
+ }

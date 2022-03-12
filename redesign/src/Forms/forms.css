@@ -22,9 +22,10 @@
   margin-bottom: var(--base-unit-half);
 }
 .field-pair label {
-  flex: 0 0 55px;
+  flex: 0 0 75px;
   margin-right: var(--base-unit);
   text-align: right;
+  font-weight: bold;
 }
 .form-page-container {
   margin: var(--base-unit);

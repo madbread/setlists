@@ -90,3 +90,9 @@ button.delete {
 hr {
   margin: var(--base-unit) 0;
 }
+
+.bold { font-weight: bold; }
+.text-small { font-size: 10px; }
+.float-right { float: right; }
+.align-right { text-align: right; }
+.hand {cursor: pointer; }
