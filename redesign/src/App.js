@@ -1,7 +1,6 @@
 import {useFetchAuth} from './useFetchAuth';
 import LoginForm from './Forms/LoginForm';
 import Page from './components/Page';
-import RegisterUserForm from './Forms/RegisterUserForm';
 import ForgotPasswordForm from './Forms/ForgotPasswordForm';
 
 import './globals.css'
@@ -15,7 +14,6 @@ const App = () => {
     ? <Page/>
     : <>
         <LoginForm/>
-        <RegisterUserForm />
         <ForgotPasswordForm />
       </>
 }
