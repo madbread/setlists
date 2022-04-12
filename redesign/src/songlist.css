@@ -83,25 +83,25 @@ th, td  {
 }
 
 .color_Mandolin {
-  background-color: #e4afba;
+  background-color: #e4afba !important;
 }
 .color_Bass {
-  background-color: #b1eab2;
+  background-color: #b1eab2 !important;
 }
 .color_Banjo {
-  background-color: #f3e9bd;
+  background-color: #f3e9bd !important;
 }
 .color_Guitar {
-  background-color: #c7beda;
+  background-color: #c7beda !important;
 }
 .color_Fiddle {
-  background-color: #c3dee8;
+  background-color: #c3dee8 !important;
 }
 .color_Electric {
-  background-color: #f3c28c;
+  background-color: #f3c28c !important;
 }
 .color_Harmonica {
-  background-color: #b1aca7;
+  background-color: #b1aca7 !important;
 }
 
 .highlight-legend {

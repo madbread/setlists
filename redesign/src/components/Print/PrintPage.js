@@ -10,9 +10,9 @@ const print = () => window.print();
 
 const PrintPage = () => {
   const [nate, setNate] = useState(false);
-  const [mike, setMike] = useState(true);
-  const [adam, setAdam] = useState(true);
-  const [carl, setCarl] = useState(true);
+  const [mike, setMike] = useState(false);
+  const [adam, setAdam] = useState(false);
+  const [carl, setCarl] = useState(false);
   const [bass, setBass] = useState(false);
   const [key, setKey] = useState(true);
   const [bpm, setBpm] = useState(false);
@@ -27,7 +27,7 @@ const PrintPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const makeSongsArray = ({songs}) => Object.keys(songs);
+    const makeSongsArray = ({songs}) => Object.entries(songs).sort(([,a],[,b]) => a-b).map(e => e[0]);
 
     const songlistRef = api.getSonglistRef(id);
     onValue(songlistRef, snapshot => {

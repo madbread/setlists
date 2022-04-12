@@ -65,7 +65,22 @@ const ViewSongs = ({songs}) => {
         </select>
       </div>
       <div className="view-songs">
-        {filteredSongs.map(s => <p key={s.id}>{s.title}</p>)}
+        <table className="songlist">
+          <thead>
+            <tr>
+              <th className="song-title"></th>
+              <th className="short-col song-key">key</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredSongs.map(s => (
+              <tr key={s.id}>
+                <td className="song-title">{s.title}</td>
+                <td className="short-col song-key">{s.key}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
