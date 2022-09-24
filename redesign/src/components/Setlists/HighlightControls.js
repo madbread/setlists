@@ -22,6 +22,7 @@ const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, s
         <option value="mike">Mike</option>
         <option value="adam">Adam</option>
         <option value="carl">Carl</option>
+        <option value="singer">Singer</option>
       </select>
       {highlight !== '' &&
         <div className="highlight-legend">
@@ -32,6 +33,9 @@ const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, s
           {inLegend.has('Electric') && <span className="color_Electric">Electric</span>}
           {inLegend.has('Banjo') && <span className="color_Banjo">Banjo</span>}
           {inLegend.has('Harmonica') && <span className="color_Harmonica">Harmonica</span>}
+          {inLegend.has('Mike') && <span className="color_Mike">Mike</span>}
+          {inLegend.has('Carl') && <span className="color_Carl">Carl</span>}
+          {inLegend.has('Adam') && <span className="color_Adam">Adam</span>}
         </div>
       }
     </div>

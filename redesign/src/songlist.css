@@ -103,6 +103,15 @@ th, td  {
 .color_Harmonica {
   background-color: #b1aca7 !important;
 }
+.color_Mike {
+  background-color: #e4afba !important;
+}
+.color_Carl {
+  background-color: #f3e9bd !important;
+}
+.color_Adam {
+  background-color: #c3dee8 !important;
+}
 
 .highlight-legend {
   margin: var(--base-unit-quarter) var(--base-unit);

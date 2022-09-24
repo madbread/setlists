@@ -135,6 +135,7 @@ const SetlistsPage = () => {
   const songsNotInList = songs.filter(s => !includedSongIds.includes(s.id));
 
   const inLegend = new Set();
+  if (highlight === 'singer') debugger;
   if (highlight !== '') includedSongIds.forEach(id => inLegend.add(songsMap[id][highlight]));
 
   return  (
