@@ -9,7 +9,6 @@ import './print.css';
 const print = () => window.print();
 
 const PrintPage = () => {
-  const [nate, setNate] = useState(false);
   const [mike, setMike] = useState(false);
   const [adam, setAdam] = useState(false);
   const [carl, setCarl] = useState(false);
@@ -64,7 +63,6 @@ const PrintPage = () => {
     return (
       <tr key={idx}>
         <td className={bold ? 'bold': ''}>{s.title}</td>
-        {nate && <td>{s.nate}</td>}
         {adam && <td>{s.adam}</td>}
         {carl && <td>{s.carl}</td>}
         {mike && <td>{s.mike}</td>}
@@ -81,8 +79,6 @@ const PrintPage = () => {
         <h5>Display Columns</h5>
         <div className="grid">
           <div className="grid-col-single">
-            <label htmlFor="cb_Nate">Nate</label>
-            <input id="cb_Nate" type="checkbox" onChange={() => setNate(c => !c)} checked={nate}/><br />
             <label htmlFor="cb_Adam">Adam</label>
             <input id="cb_Adam" type="checkbox" onChange={() => setAdam(c => !c)} checked={adam}/><br />
             <label htmlFor="cb_Carl">Carl</label>
@@ -115,7 +111,6 @@ const PrintPage = () => {
         <thead>
           <tr>
             <th></th>
-            {nate && <th>Nate</th>}
             {adam && <th>Adam</th>}
             {carl && <th>Carl</th>}
             {mike && <th>Mike</th>}

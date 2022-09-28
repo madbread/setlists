@@ -9,7 +9,6 @@ const ViewSongs = ({songs}) => {
   const [filterByMike, setFilterByMike] = useState('');
   const [filterByCarl, setFilterByCarl] = useState('');
   const [filterByAdam, setFilterByAdam] = useState('');
-  const [filterByNate, setFilterByNate] = useState('');
 
   const allKeyOptions = ['Any'].concat(keyOptions);
   const allSingerOptions = ['Any'].concat(singerOptions);
@@ -21,9 +20,8 @@ const ViewSongs = ({songs}) => {
     if (filterByAdam !== '') filtered = filtered.filter(s => s.adam === filterByAdam);
     if (filterByCarl !== '') filtered = filtered.filter(s => s.carl === filterByCarl);
     if (filterByMike !== '') filtered = filtered.filter(s => s.mike === filterByMike);
-    if (filterByNate !== '') filtered = filtered.filter(s => s.nate === filterByNate);
     setFilteredSongs(filtered);
-  }, [filterByKey, filterBySinger, filterByMike, filterByCarl, filterByAdam, filterByNate, songs]);
+  }, [filterByKey, filterBySinger, filterByMike, filterByCarl, filterByAdam, songs]);
 
   return  (
     <div>
@@ -55,12 +53,6 @@ const ViewSongs = ({songs}) => {
       <div className="field-pair">
         <label htmlFor="by_mike">Mike</label>
         <select id="by_mike" value={filterByMike} onChange={e => setFilterByMike(e.target.value)}>
-          {instrumentOptions.map(k => <option value={k} key={k}>{k}</option>)}
-        </select>
-      </div>
-      <div className="field-pair">
-        <label htmlFor="by_nate">Nate</label>
-        <select id="by_nate" value={filterByNate} onChange={e => setFilterByNate(e.target.value)}>
           {instrumentOptions.map(k => <option value={k} key={k}>{k}</option>)}
         </select>
       </div>

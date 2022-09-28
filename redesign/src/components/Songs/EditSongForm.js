@@ -5,21 +5,6 @@ import {keyOptions, singerOptions, instrumentOptions} from './songData';
 import api from '../../api';
 import {get, set, push, remove} from 'firebase/database';
 
-const abbr = title => {
-  let newTitle;
-  switch (title) {
-    case 'Guitar':
-      newTitle = 'Acoustic Guitar';
-      break;
-    case 'Electric':
-      newTitle = 'Electric Guitar';
-      break;
-    default:
-      newTitle = title;
-  }
-  return newTitle
-}
-
 const handleAddSong = data => {
   const songsRef = api.getSongsRef();
   const newSongsRef = push(songsRef);
@@ -95,33 +80,25 @@ const EditSongForm = ({song, handleCancel}) => {
         <div className="field-pair">
           <label htmlFor="adam">Adam</label>
           <select name="adam" value={formData.adam || 'Banjo'} onChange={handleInputChange}>
-            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+            {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
         <div className="field-pair">
           <label htmlFor="carl">Carl</label>
           <select name="carl" value={formData.carl || 'Guitar'} onChange={handleInputChange}>
-            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+            {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
         <div className="field-pair">
           <label htmlFor="mike">Mike</label>
           <select name="mike" value={formData.mike || 'Bass'} onChange={handleInputChange}>
-            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
+            {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
-        <div className="field-pair">
-          <label htmlFor="nate">Nate</label>
-          <select name="nate" value={formData.nate || ''} onChange={handleInputChange}>
-            {instrumentOptions.map(o => <option key={o} value={o}>{abbr(o)}</option>)}
-          </select>
-        </div>
-
         <div className="field-pair">
           <label htmlFor="bpm">bpm</label>
           <input className="full-width" name="bpm" type="number" value={formData.bpm || ''} onChange={handleInputChange} />
         </div>
-
         <div className="field-pair">
           <label></label>
           <button type="submit">save</button>

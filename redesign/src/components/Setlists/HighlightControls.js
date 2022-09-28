@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, showCarl, setShowNate, setShowMike, setShowAdam, setShowCarl, setHighlight}) => (
+const HighlightControls = ({inLegend, highlight, showMike, showAdam, showCarl, setShowMike, setShowAdam, setShowCarl, setHighlight}) => (
   <>
     <div className="highlight-controls">
       <label className="row" htmlFor="highlight">Show</label>
-      <label htmlFor="cb_nate">Nate</label>
-      <input id="cb_nate" type="checkbox" checked={showNate} onChange={e => setShowNate(e.target.checked)}/>
       <label htmlFor="cb_mike">Mike</label>
       <input id="cb_mike" type="checkbox" checked={showMike} onChange={e => setShowMike(e.target.checked)}/>
       <label htmlFor="cb_adam">Adam</label>
@@ -18,7 +16,6 @@ const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, s
       <label className="row" htmlFor="highlight">Highlight</label>
       <select id="highlight" value={highlight} onChange={e => setHighlight(e.target.value)}>
         <option value="">None</option>
-        <option value="nate">Nate</option>
         <option value="mike">Mike</option>
         <option value="adam">Adam</option>
         <option value="carl">Carl</option>
@@ -45,11 +42,9 @@ const HighlightControls = ({inLegend, highlight, showNate, showMike, showAdam, s
 HighlightControls.propTypes = {
   inLegend: PropTypes.object,
   highlight: PropTypes.string,
-  showNate: PropTypes.bool,
   showMike: PropTypes.bool,
   showAdam: PropTypes.bool,
   showCarl: PropTypes.bool,
-  setShowNate: PropTypes.func,
   setShowMike: PropTypes.func,
   setShowAdam: PropTypes.func,
   setShowCarl: PropTypes.func,

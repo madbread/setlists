@@ -5,13 +5,13 @@ const abbr = title => {
   let newTitle;
   switch (title) {
     case 'Mandolin':
-      newTitle = 'Mand';
+      newTitle = 'Mando';
       break;
     case 'Harmonica':
       newTitle = 'Harp';
       break;
     case 'Guitar':
-      newTitle = 'Acou';
+      newTitle = 'Guitar';
       break;
     case 'Fiddle':
       newTitle = 'Fidd';
@@ -34,7 +34,6 @@ const Setlist = ({
   songsMap,
   handleRemoveSong,
   handleReorderSetlist,
-  showNate,
   showMike,
   showAdam,
   showCarl,
@@ -55,7 +54,6 @@ const Setlist = ({
             className={`color_${songsMap[songId][highlight] || ''}`}
           >
             <td className="song-title">{idx + 1}) {songsMap[songId].title}</td>
-            {showNate && <td className="name-col">{abbr(songsMap[songId].nate)}</td>}
             {showMike && <td className="name-col">{abbr(songsMap[songId].mike)}</td>}
             {showAdam && <td className="name-col">{abbr(songsMap[songId].adam)}</td>}
             {showCarl && <td className="name-col">{abbr(songsMap[songId].carl)}</td>}
@@ -84,7 +82,6 @@ const Setlist = ({
                 <thead>
                   <tr>
                     <th className="song-title"></th>
-                    {showNate && <th className="name-col">Nate</th>}
                     {showMike && <th className="name-col">Mike</th>}
                     {showAdam && <th className="name-col">Adam</th>}
                     {showCarl && <th className="name-col">Carl</th>}
@@ -111,7 +108,6 @@ Setlist.propTypes = {
   handleRemoveSong: PropTypes.func,
   handleReorderSetlist: PropTypes.func,
   editMode: PropTypes.bool,
-  showNate: PropTypes.bool,
   showMike: PropTypes.bool,
   showAdam: PropTypes.bool,
   showCarl: PropTypes.bool,

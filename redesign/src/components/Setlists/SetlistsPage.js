@@ -13,11 +13,10 @@ const SetlistsPage = () => {
   const [setlists, setSetlists] = useState([]);
   const [songs, setSongs] = useState([]);
 
-  const [showNate, setShowNate]   = useState(false);
-  const [showMike, setShowMike]   = useState(false);
-  const [showAdam, setShowAdam]   = useState(false);
-  const [showCarl, setShowCarl]   = useState(false);
-  const [highlight, setHighlight] = useState('');
+  const [showMike, setShowMike]   = useState(true);
+  const [showAdam, setShowAdam]   = useState(true);
+  const [showCarl, setShowCarl]   = useState(true);
+  const [highlight, setHighlight] = useState('singer');
 
   const [setlistMap, setSetlistMap] = useState({});
   const [songsMap, setSongsMap] = useState({});
@@ -35,7 +34,7 @@ const SetlistsPage = () => {
     
     const songlistsRef = onValue(api.getSonglistsRef(), snapshot => {
       setSetlistMap(snapshot.val());
-      const lists = makeArrayFromDB(snapshot);
+      const lists = makeArrayFromDB(snapshot).reverse();
       setSetlists(lists);
       setLoadingSetlists(false);
     });
@@ -135,7 +134,6 @@ const SetlistsPage = () => {
   const songsNotInList = songs.filter(s => !includedSongIds.includes(s.id));
 
   const inLegend = new Set();
-  if (highlight === 'singer') debugger;
   if (highlight !== '') includedSongIds.forEach(id => inLegend.add(songsMap[id][highlight]));
 
   return  (
@@ -151,11 +149,9 @@ const SetlistsPage = () => {
       <HighlightControls
         inLegend={inLegend}
         highlight={highlight}
-        showNate={showNate}
         showMike={showMike}
         showAdam={showAdam}
         showCarl={showCarl}
-        setShowNate={setShowNate}
         setShowMike={setShowMike}
         setShowAdam={setShowAdam}
         setShowCarl={setShowCarl}
@@ -177,7 +173,6 @@ const SetlistsPage = () => {
         songsMap={songsMap}
         handleRemoveSong={handleRemoveSong}
         handleReorderSetlist={handleReorderSetlist}
-        showNate={showNate}
         showMike={showMike}
         showAdam={showAdam}
         showCarl={showCarl}
