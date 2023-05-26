@@ -66,21 +66,16 @@ th, td  {
 .highlight-controls {
   display: flex;
   align-items: center;
-  margin: var(--base-unit-half) 0;
 }
 
 .highlight-controls select {
   width: auto;
 }
 
-.highlight-controls label.row {
-  margin-right: var(--base-unit);
-  font-weight: bold;
+.highlight-controls > * {
+  margin-right: 0.5rem;
 }
 
-.highlight-controls input {
-  margin-right: var(--base-unit);
-}
 
 .color_Mandolin {
   background-color: #e4afba !important;
@@ -108,10 +103,6 @@ th, td  {
 }
 .color_Carl {
   background-color: #f3e9bd !important;
-}
-
-.highlight-legend {
-  margin: var(--base-unit-quarter) var(--base-unit);
 }
 
 .highlight-legend span {

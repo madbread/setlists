@@ -79,7 +79,7 @@ const PrintPage = () => {
             <label htmlFor="cb_Key">Key</label>
             <div className="cb_input">
               <input id="cb_Key" type="checkbox" onChange={() => setKey(c => !c)} checked={key}/>
-              </div>
+            </div>
           </div>
           <div className="input-group">
             <label htmlFor="cb_Bold">Bold Titles</label>

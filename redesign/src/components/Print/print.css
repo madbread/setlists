@@ -99,10 +99,11 @@ tbody.zebra tr:nth-child(even) {
   font-weight: bold;
 }
 
-.print_controls .fields,
-.print_controls .input-group {
+.fields,
+.input-group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .print-records-page table {

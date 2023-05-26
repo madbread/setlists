@@ -4,11 +4,6 @@ import PropTypes from 'prop-types';
 const HighlightControls = ({inLegend, highlight, showMike, showCarl, setShowMike, setShowCarl, setHighlight}) => (
   <>
     <div className="highlight-controls">
-      <label className="row" htmlFor="highlight">Show</label>
-      <label htmlFor="cb_mike">Mike</label>
-      <input id="cb_mike" type="checkbox" checked={showMike} onChange={e => setShowMike(e.target.checked)}/>
-      <label htmlFor="cb_carl">Carl</label>
-      <input id="cb_carl" type="checkbox" checked={showCarl} onChange={e => setShowCarl(e.target.checked)}/>
       <select id="highlight" value={highlight} onChange={e => setHighlight(e.target.value)}>
         <option value="">None</option>
         <option value="mike">Mike</option>
@@ -28,6 +23,18 @@ const HighlightControls = ({inLegend, highlight, showMike, showCarl, setShowMike
           {inLegend.has('Carl') && <span className="color_Carl">Carl</span>}
         </div>
       }
+      <div className="input-group">
+        <label htmlFor="cb_mike">Mike</label>
+        <div className="cb_input">
+          <input id="cb_mike" type="checkbox" checked={showMike} onChange={e => setShowMike(e.target.checked)}/>
+        </div>
+      </div>
+      <div className="input-group">
+        <label htmlFor="cb_carl">Carl</label>
+        <div className="cb_input">
+          <input id="cb_carl" type="checkbox" checked={showCarl} onChange={e => setShowCarl(e.target.checked)}/>
+        </div>
+      </div>  
     </div>
   </>
 );
