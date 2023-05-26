@@ -9,9 +9,6 @@ const HighlightControls = ({inLegend, highlight, showMike, showCarl, setShowMike
       <input id="cb_mike" type="checkbox" checked={showMike} onChange={e => setShowMike(e.target.checked)}/>
       <label htmlFor="cb_carl">Carl</label>
       <input id="cb_carl" type="checkbox" checked={showCarl} onChange={e => setShowCarl(e.target.checked)}/>
-    </div>
-    <div className="highlight-controls">
-      <label className="row" htmlFor="highlight">Highlight</label>
       <select id="highlight" value={highlight} onChange={e => setHighlight(e.target.value)}>
         <option value="">None</option>
         <option value="mike">Mike</option>
