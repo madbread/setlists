@@ -14,7 +14,6 @@ const SetlistsPage = () => {
   const [songs, setSongs] = useState([]);
 
   const [showMike, setShowMike]   = useState(true);
-  const [showAdam, setShowAdam]   = useState(true);
   const [showCarl, setShowCarl]   = useState(true);
   const [highlight, setHighlight] = useState('singer');
 
@@ -150,10 +149,8 @@ const SetlistsPage = () => {
         inLegend={inLegend}
         highlight={highlight}
         showMike={showMike}
-        showAdam={showAdam}
         showCarl={showCarl}
         setShowMike={setShowMike}
-        setShowAdam={setShowAdam}
         setShowCarl={setShowCarl}
         setHighlight={setHighlight}/>
       
@@ -174,7 +171,6 @@ const SetlistsPage = () => {
         handleRemoveSong={handleRemoveSong}
         handleReorderSetlist={handleReorderSetlist}
         showMike={showMike}
-        showAdam={showAdam}
         showCarl={showCarl}
         highlight={highlight}
       />

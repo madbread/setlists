@@ -10,11 +10,9 @@ const print = () => window.print();
 
 const PrintPage = () => {
   const [mike, setMike] = useState(false);
-  const [adam, setAdam] = useState(false);
   const [carl, setCarl] = useState(false);
   const [bass, setBass] = useState(false);
   const [key, setKey] = useState(true);
-  const [bpm, setBpm] = useState(false);
   const [bold, setBold] = useState(false);
 
   const [title, setTitle] = useState('SETLIST');
@@ -63,12 +61,10 @@ const PrintPage = () => {
     return (
       <tr key={idx}>
         <td className={bold ? 'bold': ''}>{s.title}</td>
-        {adam && <td>{s.adam}</td>}
         {carl && <td>{s.carl}</td>}
         {mike && <td>{s.mike}</td>}
         {bass && <td>{swapKeyValue(s).Bass || ''}</td>}
         {key && <td>{s.key}</td>}
-        {bpm && <td>{s.bpm}</td>}
       </tr>
     )
   };
@@ -79,8 +75,6 @@ const PrintPage = () => {
         <h5>Display Columns</h5>
         <div className="grid">
           <div className="grid-col-single">
-            <label htmlFor="cb_Adam">Adam</label>
-            <input id="cb_Adam" type="checkbox" onChange={() => setAdam(c => !c)} checked={adam}/><br />
             <label htmlFor="cb_Carl">Carl</label>
             <input id="cb_Carl" type="checkbox" onChange={() => setCarl(c => !c)} checked={carl}/><br />
           </div>
@@ -93,8 +87,6 @@ const PrintPage = () => {
             <input id="cb_Key" type="checkbox" onChange={() => setKey(c => !c)} checked={key}/><br />
           </div>
           <div className="grid-col-single">
-            <label htmlFor="cb_Bpm">BPM</label>
-            <input id="cb_Bpm" type="checkbox" onChange={() => setBpm(c => !c)} checked={bpm}/><br />
             <label htmlFor="cb_Bold">Bold Titles</label>  
             <input id="cb_Bold" type="checkbox" onChange={() => setBold(c => !c)} checked={bold} /><br />
           </div>
@@ -111,12 +103,10 @@ const PrintPage = () => {
         <thead>
           <tr>
             <th></th>
-            {adam && <th>Adam</th>}
             {carl && <th>Carl</th>}
             {mike && <th>Mike</th>}
             {bass && <th>Bass</th>}
             {key && <th>Key</th>}
-            {bpm && <th>BPM</th>}
           </tr>
         </thead>
         <tbody className="zebra">

@@ -67,37 +67,27 @@ const EditSongForm = ({song, handleCancel}) => {
         </div>
         <div className="field-pair">
           <label htmlFor="key">Key</label>
-          <select name="key" value={formData.key || 'A'} onChange={handleInputChange}>
+          <select name="key" value={formData.key} onChange={handleInputChange}>
             {keyOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
         <div className="field-pair">
           <label htmlFor="singer">Singer</label>
-          <select name="singer" value={formData.singer || 'Carl'} onChange={handleInputChange}>
+          <select name="singer" value={formData.singer} onChange={handleInputChange}>
             {singerOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
         <div className="field-pair">
-          <label htmlFor="adam">Adam</label>
-          <select name="adam" value={formData.adam || 'Banjo'} onChange={handleInputChange}>
-            {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
-          </select>
-        </div>
-        <div className="field-pair">
           <label htmlFor="carl">Carl</label>
-          <select name="carl" value={formData.carl || 'Guitar'} onChange={handleInputChange}>
+          <select name="carl" value={formData.carl} onChange={handleInputChange}>
             {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
         </div>
         <div className="field-pair">
           <label htmlFor="mike">Mike</label>
-          <select name="mike" value={formData.mike || 'Bass'} onChange={handleInputChange}>
+          <select name="mike" value={formData.mike} onChange={handleInputChange}>
             {instrumentOptions.map(o => <option key={o} value={o}>{o}</option>)}
           </select>
-        </div>
-        <div className="field-pair">
-          <label htmlFor="bpm">bpm</label>
-          <input className="full-width" name="bpm" type="number" value={formData.bpm || ''} onChange={handleInputChange} />
         </div>
         <div className="field-pair">
           <label></label>

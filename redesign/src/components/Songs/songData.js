@@ -6,7 +6,6 @@ export const keyOptions = [
 export const singerOptions = [
   'Carl',
   'Mike',
-  'Adam',
   'Instrumental'
 ];
 
@@ -28,8 +27,6 @@ export const getNewSong = () => ({
   title: '',
   key: 'C',
   carl: 'Guitar',
-  adam: 'Banjo',
-  mike: 'Bass',
-  singer: 'Carl',
-  bpm: ''
+  mike: 'Mandolin',
+  singer: 'Carl'
 });

@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HighlightControls = ({inLegend, highlight, showMike, showAdam, showCarl, setShowMike, setShowAdam, setShowCarl, setHighlight}) => (
+const HighlightControls = ({inLegend, highlight, showMike, showCarl, setShowMike, setShowCarl, setHighlight}) => (
   <>
     <div className="highlight-controls">
       <label className="row" htmlFor="highlight">Show</label>
       <label htmlFor="cb_mike">Mike</label>
       <input id="cb_mike" type="checkbox" checked={showMike} onChange={e => setShowMike(e.target.checked)}/>
-      <label htmlFor="cb_adam">Adam</label>
-      <input id="cb_adam" type="checkbox" checked={showAdam} onChange={e => setShowAdam(e.target.checked)}/>
       <label htmlFor="cb_carl">Carl</label>
       <input id="cb_carl" type="checkbox" checked={showCarl} onChange={e => setShowCarl(e.target.checked)}/>
     </div>
@@ -17,7 +15,6 @@ const HighlightControls = ({inLegend, highlight, showMike, showAdam, showCarl, s
       <select id="highlight" value={highlight} onChange={e => setHighlight(e.target.value)}>
         <option value="">None</option>
         <option value="mike">Mike</option>
-        <option value="adam">Adam</option>
         <option value="carl">Carl</option>
         <option value="singer">Singer</option>
       </select>
@@ -32,7 +29,6 @@ const HighlightControls = ({inLegend, highlight, showMike, showAdam, showCarl, s
           {inLegend.has('Harmonica') && <span className="color_Harmonica">Harmonica</span>}
           {inLegend.has('Mike') && <span className="color_Mike">Mike</span>}
           {inLegend.has('Carl') && <span className="color_Carl">Carl</span>}
-          {inLegend.has('Adam') && <span className="color_Adam">Adam</span>}
         </div>
       }
     </div>
@@ -43,10 +39,8 @@ HighlightControls.propTypes = {
   inLegend: PropTypes.object,
   highlight: PropTypes.string,
   showMike: PropTypes.bool,
-  showAdam: PropTypes.bool,
   showCarl: PropTypes.bool,
   setShowMike: PropTypes.func,
-  setShowAdam: PropTypes.func,
   setShowCarl: PropTypes.func,
   setHighlight: PropTypes.func,
 };
